@@ -6,7 +6,7 @@ int main() {
  
     // Implementação do FOR para ler exatamente 10 códigos
     for (i = 0; i < 10; i++) {
-        printf("Digite o codigo %d: ", i + 1);
+        printf("Digite o codigo %d:\n ", i);
         scanf("%d", &codigo);
  
         // Verifica se o código está entre 1000 e 9999
