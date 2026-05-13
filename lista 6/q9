@@ -1,0 +1,32 @@
+#include <stdio.h>
+ 
+int main() {
+    int a[5], b[5], c[5];
+    int i;
+ 
+    // Leia o vetor a
+    for(i = 0; i < 5; i++) {
+        printf("Digite A[%d]: ", i);
+        scanf("%d", &a[i]);
+    }
+ 
+    // Leia o vetor b
+    for(i = 0; i < 5; i++) {
+        printf("Digite B[%d]: ", i);
+        scanf("%d", &b[i]);
+    }
+ 
+    // Some os vetores
+    for(i = 0; i < 5; i++) {
+        c[i] = a[i] + b[i];
+    }
+ 
+    // Exiba o vetor c
+    printf("\nVetor C:\n");
+ 
+    for(i = 0; i < 5; i++) {
+        printf("%d ", c[i]);
+    }
+ 
+    return 0;
+}
