@@ -1,0 +1,45 @@
+print("=== ANÁLISE DE SOLICITAÇÃO DE CRÉDITO ===")
+
+idade = int(input("Digite sua idade: "))
+salario = float(input("Digite seu salário mensal: R$ "))
+divida = float(input("Digite o valor da dívida atual: R$ "))
+tempo_emprego = int(input("Digite o tempo de emprego em meses: "))
+valor_solicitado = float(input("Digite o valor solicitado: R$ "))
+parcelas = int(input("Digite o número de parcelas: "))
+
+# Cálculo da parcela
+valor_parcela = valor_solicitado / parcelas
+
+# Critérios para aprovação
+if idade < 18:
+    aprovado = False
+    motivo = "O solicitante deve ter 18 anos ou mais."
+elif salario <= 0:
+    aprovado = False
+    motivo = "O salário deve ser maior que zero."
+elif tempo_emprego < 6:
+    aprovado = False
+    motivo = "É necessário ter pelo menos 6 meses de emprego."
+elif valor_parcela > salario * 0.30:
+    aprovado = False
+    motivo = "O valor da parcela ultrapassa 30% do salário."
+elif divida > salario * 0.50:
+    aprovado = False
+    motivo = "A dívida atual é muito alta em relação ao salário."
+elif parcelas <= 0:
+    aprovado = False
+    motivo = "O número de parcelas deve ser maior que zero."
+else:
+    aprovado = True
+    motivo = "Todos os critérios foram atendidos."
+
+# Resultado
+print("\n=== RESULTADO DA ANÁLISE ===")
+print(f"Valor solicitado: R$ {valor_solicitado:.2f}")
+print(f"Valor da parcela: R$ {valor_parcela:.2f}")
+
+if aprovado:
+    print("CRÉDITO APROVADO!")
+else:
+    print("CRÉDITO NEGADO!")
+    print("Motivo:", motivo)
